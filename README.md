@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM is an acronym that stands for Document Object Model. Essentially, the DOM is how the browser interprets and displays our HTML and CSS code, using JavaScript. The DOM is a JavaScript object that contains every element in our HTML. Each element becomes a DOM Node that we can then access using the `document.` syntax.
+
 2. What is an event?
+
+An event is any way that a user can interact with a web page. There are many types of events, but some of the most common are `click`, `mouseover`, and `mouseout`. 
 
 3. What is an event listener?
 
+An event listener is a method that is used to call a function whenever a specific event happens on a specific DOM node. The syntax for an event listener goes like this `DOMNode.addEventListener('event', function())`.
+
 4. Why would we convert a NodeList into an Array?
 
+Although NodeLists are similar to Arrays, they don't have access to several methods that arrays have. For example, NodeLists don't have access to the `.map`, `.filter`, and `.reduce` methods, among several others. If we want to use those methods for any reason, we must first convert the NodeList into an array using `Array.from(NodeList)`.
+
 5. What is a component?
+
+A component is a reusable piece of code most likely made up of HTML, CSS, and JavaScript that is used to perform a certain task in a website or application. In a component, JavaScript is often used to toggle, add, or remove CSS classes and detect the dataset of HTML elements.
 
 ### Git Set up
 
@@ -46,6 +56,8 @@ Edit this document to include your answers after each question. Make sure to lea
 * [ ] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
+
+####################################### COMPLETED ############################################
 
 Your finished project must include all of the following requirements:
 
