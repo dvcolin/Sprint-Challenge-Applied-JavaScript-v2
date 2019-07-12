@@ -26,16 +26,19 @@ const createImage = data => {
   const image = document.createElement('img');
   image.src = `./assets/carousel/${data.src}`;
 
-  const imgIndex = data.index;
+  image.dataset.index = data.index;
   carousel.appendChild(image);
 }
 const index = 0;
+const currentImage = document.querySelector(`img[data-index='${index}']`);
+console.log(currentImage);
 
 //Element structure
 carousel.appendChild(leftButton);
 
 images.forEach(img => {
   createImage(img);
+
 })
 carousel.appendChild(rightButton);
 
@@ -43,6 +46,8 @@ carousel.appendChild(rightButton);
 carousel.classList.add('carousel');
 leftButton.classList.add('left-button');
 rightButton.classList.add('right-button');
+
+
 
 
 
