@@ -16,12 +16,14 @@ const createCarousel = () => {
 const carousel = document.createElement('div');
 const leftButton = document.createElement('div');
 const rightButton = document.createElement('div');
+
 const images = [
   {src: "mountains.jpeg", index: 0}, 
   {src: "computer.jpeg", index: 1}, 
   {src: "trees.jpeg", index: 2},
   {src: "turntable.jpeg", index: 3}, 
 ];
+
 const createImage = data => {
   const image = document.createElement('img');
   image.src = `./assets/carousel/${data.src}`;
@@ -29,9 +31,9 @@ const createImage = data => {
   image.dataset.index = data.index;
   carousel.appendChild(image);
 }
+
 const index = 0;
-const currentImage = document.querySelector(`img[data-index='${index}']`);
-console.log(currentImage);
+
 
 //Element structure
 carousel.appendChild(leftButton);
@@ -40,6 +42,7 @@ images.forEach(img => {
   createImage(img);
 
 })
+
 carousel.appendChild(rightButton);
 
 //Add classes
@@ -47,12 +50,9 @@ carousel.classList.add('carousel');
 leftButton.classList.add('left-button');
 rightButton.classList.add('right-button');
 
-
-
-
-
-
-
+//Element content
+leftButton.textContent = `<`
+rightButton.textContent = `>`
 
 
 return carousel;
