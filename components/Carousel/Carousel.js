@@ -22,18 +22,20 @@ const images = [
   {src: "trees.jpeg", index: 2},
   {src: "turntable.jpeg", index: 3}, 
 ];
+const createImage = data => {
+  const image = document.createElement('img');
+  image.src = `./assets/carousel/${data.src}`;
+
+  const imgIndex = data.index;
+  carousel.appendChild(image);
+}
 const index = 0;
 
 //Element structure
 carousel.appendChild(leftButton);
 
 images.forEach(img => {
-  const image = document.createElement('img');
-  image.src = `./assets/carousel/${img.src}`;
-
-  const imgIndex = img.index;
-  carousel.appendChild(image);
-  console.log(img.index);
+  createImage(img);
 })
 carousel.appendChild(rightButton);
 
