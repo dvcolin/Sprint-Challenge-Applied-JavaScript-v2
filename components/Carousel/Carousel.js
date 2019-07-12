@@ -7,6 +7,32 @@
     6. Have fun!
 */
 
+const createCarousel = () => {
+//Elements
+const carousel = document.createElement('div');
+const leftButton = document.createElement('div');
+const rightButton = document.createElement('div');
+const images = ["mountains.jpeg", "computer.jpeg", ".trees.jpeg", "turntable.jpeg"];
+
+
+//Element structure
+carousel.appendChild(leftButton);
+
+images.forEach(img => {
+  const image = document.createElement('img');
+  image.src = `${img}`;
+  carousel.appendChild(image);
+})
+carousel.appendChild(rightButton);
+
+//Add classes
+carousel.classList.add('carousel');
+leftButton.classList.add('left-button');
+rightButton.classList.add('right-button');
+
+return carousel;
+}
+
 /* HTML:
   <div class="carousel">
     <div class="left-button"> < </div>
