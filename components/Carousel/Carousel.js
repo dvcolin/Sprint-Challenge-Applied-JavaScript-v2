@@ -7,6 +7,60 @@
     6. Have fun!
 */
 
+const carouselContainer = document.querySelector('.carousel-container');
+
+carouselContainer.appendChild(createCarousel());
+
+function createCarousel() {
+//Elements
+const carousel = document.createElement('div');
+const leftButton = document.createElement('div');
+const rightButton = document.createElement('div');
+
+const images = [
+  {src: "mountains.jpeg", index: 0}, 
+  {src: "computer.jpeg", index: 1}, 
+  {src: "trees.jpeg", index: 2},
+  {src: "turntable.jpeg", index: 3}, 
+];
+
+const createImage = data => {
+  const image = document.createElement('img');
+  image.src = `./assets/carousel/${data.src}`;
+  image.dataset.index = data.index;
+
+  return image;
+}
+
+const index = 0;
+
+
+//Element structure
+carousel.appendChild(leftButton);
+
+images.forEach(img => {
+  carousel.appendChild(createImage(img));
+})
+
+carousel.appendChild(rightButton);
+
+//Add classes
+carousel.classList.add('carousel');
+leftButton.classList.add('left-button');
+rightButton.classList.add('right-button');
+
+const currentImage = document.querySelector(`[data-index='${index}']`);
+console.log(currentImage);
+
+//Element content
+leftButton.textContent = `<`
+rightButton.textContent = `>`
+
+
+return carousel;
+}
+
+
 /* HTML:
   <div class="carousel">
     <div class="left-button"> < </div>
