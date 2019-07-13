@@ -9,9 +9,9 @@
 
 const carouselContainer = document.querySelector('.carousel-container');
 
+carouselContainer.appendChild(createCarousel());
 
-
-const createCarousel = () => {
+function createCarousel() {
 //Elements
 const carousel = document.createElement('div');
 const leftButton = document.createElement('div');
@@ -27,9 +27,9 @@ const images = [
 const createImage = data => {
   const image = document.createElement('img');
   image.src = `./assets/carousel/${data.src}`;
-
   image.dataset.index = data.index;
-  carousel.appendChild(image);
+
+  return image;
 }
 
 const index = 0;
@@ -39,8 +39,7 @@ const index = 0;
 carousel.appendChild(leftButton);
 
 images.forEach(img => {
-  createImage(img);
-
+  carousel.appendChild(createImage(img));
 })
 
 carousel.appendChild(rightButton);
@@ -50,6 +49,9 @@ carousel.classList.add('carousel');
 leftButton.classList.add('left-button');
 rightButton.classList.add('right-button');
 
+const currentImage = document.querySelector(`[data-index='${index}']`);
+console.log(currentImage);
+
 //Element content
 leftButton.textContent = `<`
 rightButton.textContent = `>`
@@ -57,7 +59,8 @@ rightButton.textContent = `>`
 
 return carousel;
 }
-carouselContainer.appendChild(createCarousel());
+
+
 /* HTML:
   <div class="carousel">
     <div class="left-button"> < </div>
